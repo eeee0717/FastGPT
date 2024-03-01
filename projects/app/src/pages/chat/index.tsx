@@ -249,6 +249,7 @@ const Chat = ({ appId, chatId }: { appId: string; chatId: string }) => {
         <title>{chatData.app.name}</title>
       </Head>
       {/* pc show myself apps */}
+      {/* PC端聊天界面侧边栏 */}
       {isPc && (
         <Box borderRight={theme.borders.base} w={'220px'} flexShrink={0}>
           <SliderApps appId={appId} />
@@ -257,7 +258,7 @@ const Chat = ({ appId, chatId }: { appId: string; chatId: string }) => {
 
       <PageContainer flex={'1 0 0'} w={0} p={[0, '16px']} position={'relative'}>
         <Flex h={'100%'} flexDirection={['column', 'row']} bg={'white'}>
-          {/* pc always show history. */}
+          {/* pc always show history. 历史记录*/}
           {((children: React.ReactNode) => {
             return isPc || !appId ? (
               <SideBar>{children}</SideBar>

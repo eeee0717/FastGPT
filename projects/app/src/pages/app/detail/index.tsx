@@ -118,7 +118,7 @@ const AppDetail = ({ currentTab }: { currentTab: `${TabEnum}` }) => {
       </Head>
       <PageContainer>
         <Flex flexDirection={['column', 'row']} h={'100%'}>
-          {/* pc tab */}
+          {/* pc tab 侧边栏“发布应用” */}
           <Box
             display={['none', 'flex']}
             flexDirection={'column'}
@@ -189,6 +189,7 @@ const AppDetail = ({ currentTab }: { currentTab: `${TabEnum}` }) => {
               }}
             />
           </Box>
+
           <Box flex={'1 0 0'} h={[0, '100%']} overflow={['overlay', '']}>
             {currentTab === TabEnum.simpleEdit && <SimpleEdit appId={appId} />}
             {currentTab === TabEnum.adEdit && appDetail && (

@@ -18,6 +18,7 @@ export async function connectMongo({
   beforeHook && (await beforeHook());
 
   console.log('mongo start connect');
+  console.log(process.env.MONGODB_URI);
   try {
     mongoose.set('strictQuery', true);
     const maxConnecting = Math.max(30, Number(process.env.DB_MAX_LINK || 20));

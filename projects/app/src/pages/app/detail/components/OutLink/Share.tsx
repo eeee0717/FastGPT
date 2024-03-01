@@ -68,12 +68,14 @@ const Share = ({ appId }: { appId: string }) => {
   return (
     <Box position={'relative'} pt={3} px={5} minH={'50vh'}>
       <Flex justifyContent={'space-between'}>
+        {/* 免登录窗口 */}
         <Box fontWeight={'bold'} fontSize={['md', 'xl']}>
           {t('core.app.Share link')}
           <MyTooltip forceShow label={t('core.app.Share link desc detail')}>
             <QuestionOutlineIcon ml={1} />
           </MyTooltip>
         </Box>
+        {/* 创建新链接 */}
         <Button
           variant={'whitePrimary'}
           colorScheme={'blue'}
@@ -198,6 +200,7 @@ const Share = ({ appId }: { appId: string }) => {
           </Box>
         </Flex>
       )}
+      {/* 创建成功 */}
       {!!editLinkData && (
         <EditLinkModal
           appId={appId}
@@ -220,6 +223,7 @@ const Share = ({ appId }: { appId: string }) => {
           onClose={() => setEditLinkData(undefined)}
         />
       )}
+
       {!!selectedLinkData && (
         <SelectUsingWayModal
           share={selectedLinkData}

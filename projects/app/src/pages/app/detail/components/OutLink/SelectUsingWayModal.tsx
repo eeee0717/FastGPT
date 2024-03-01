@@ -73,6 +73,7 @@ const SelectUsingWayModal = ({ share, onClose }: { share: OutLinkSchema; onClose
   });
 
   const baseUrl = feConfigs?.customSharePageDomain || location?.origin;
+  // 更改分享链接
   const linkUrl = `${baseUrl}/chat/share?shareId=${share?.shareId}${
     getValues('showHistory') ? '' : '&showHistory=0'
   }`;
