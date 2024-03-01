@@ -35,6 +35,7 @@ import { useAppStore } from '@/web/core/app/store/useAppStore';
 import { checkChatSupportSelectFileByChatModels } from '@/web/core/chat/utils';
 import { chatContentReplaceBlock } from '@fastgpt/global/core/chat/utils';
 import { ChatStatusEnum } from '@fastgpt/global/core/chat/constants';
+import app from '@fastgpt/global/common/error/code/app';
 
 const Chat = ({ appId, chatId }: { appId: string; chatId: string }) => {
   const router = useRouter();
@@ -328,7 +329,7 @@ const Chat = ({ appId, chatId }: { appId: string; chatId: string }) => {
             flex={'1 0 0'}
             flexDirection={'column'}
           >
-            {/* header */}
+            {/* header 标题 */}
             <ChatHeader
               appAvatar={chatData.app.avatar}
               appName={chatData.app.name}

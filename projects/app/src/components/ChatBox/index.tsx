@@ -592,6 +592,7 @@ const ChatBox = (
     [onUpdateVariable]
   );
 
+  // chatbox style
   return (
     <Flex flexDirection={'column'} h={'100%'}>
       <Script src="/js/html2pdf.bundle.min.js" strategy="lazyOnload"></Script>
@@ -1198,6 +1199,7 @@ const VariableInput = React.memo(function VariableInput({
   );
 });
 
+// 头像
 function ChatAvatar({ src, type }: { src?: string; type: 'Human' | 'AI' }) {
   const theme = useTheme();
   return (
@@ -1215,21 +1217,21 @@ function ChatAvatar({ src, type }: { src?: string; type: 'Human' | 'AI' }) {
   );
 }
 
+// 加载时显示内容
 function Empty() {
-  const { data: chatProblem } = useMarkdown({ url: '/chatProblem.md' });
-  const { data: versionIntro } = useMarkdown({ url: '/versionIntro.md' });
-
-  return (
-    <Box pt={6} w={'85%'} maxW={'600px'} m={'auto'} alignItems={'center'} justifyContent={'center'}>
-      {/* version intro */}
-      <Card p={4} mb={10} minH={'200px'}>
-        <Markdown source={versionIntro} />
-      </Card>
-      <Card p={4} minH={'600px'}>
-        <Markdown source={chatProblem} />
-      </Card>
-    </Box>
-  );
+  // const { data: chatProblem } = useMarkdown({ url: '/chatProblem.md' });
+  // const { data: versionIntro } = useMarkdown({ url: '/versionIntro.md' });
+  // return (
+  //   <Box pt={6} w={'85%'} maxW={'600px'} m={'auto'} alignItems={'center'} justifyContent={'center'}>
+  //     {/* version intro */}
+  //     <Card p={4} mb={10} minH={'200px'}>
+  //       <Markdown source={versionIntro} />
+  //     </Card>
+  //     <Card p={4} minH={'600px'}>
+  //       <Markdown source={chatProblem} />
+  //     </Card>
+  //   </Box>
+  // );
 }
 
 const ChatControllerComponent = React.memo(function ChatControllerComponent({
@@ -1266,6 +1268,7 @@ const ChatControllerComponent = React.memo(function ChatControllerComponent({
   const { audioLoading, audioPlaying, hasAudio, playAudio, cancelAudio } = useAudioPlay({
     ttsConfig
   });
+  // 上层功能图标
   const controlIconStyle = {
     w: '14px',
     cursor: 'pointer',
@@ -1276,6 +1279,7 @@ const ChatControllerComponent = React.memo(function ChatControllerComponent({
     border: theme.borders.base,
     mr: 3
   };
+
   const controlContainerStyle = {
     className: 'control',
     color: 'myGray.400',
